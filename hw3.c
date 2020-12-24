@@ -92,20 +92,8 @@ int main(int argc, char *argv[])
 	arpCount=0;
 	totalpacketCount=0;
 	pcap_loop(handle, -1, my_packet_handler, NULL);
-	pcap_close(handle);
-/*
-	printf("\n---------- Result ----------\n");
-	printf("Total packet number: %d\n", totalpacketCount);
-	if(ipv6Count>0){
-		for(i=0; i<ipv6Count; i++) 
-			printf("packet: (%s,%s) -> %d\n", ipv6_lnode[i].source, ipv6_lnode[i].dest, ipv6_lnode[i].connect);
-	}
-	if(ipv4Count>0){
-		for(i=0; i<ipv4Count; i++)
-			printf("packet: (%s,%s) -> %d\n", ipv4_lnode[i].source, ipv4_lnode[i].dest, ipv4_lnode[i].connect);
-	}
-	if(arpCount>0) printf("ARP packet -> %d\n", arpCount);	
-	printf("\n");*/
+	pcap_close(handle);	
+	printf("\n");
 	return 0;
 }
 
